@@ -3,21 +3,31 @@ require 'rails_helper'
 RSpec.describe "As a user" do
   describe "When I visit the registration page" do
     it "has a form that includes email, password, and password confirmation" do
+      visit '/registration'
+      fill_in "Email" , with: "email@email.com"
+      fill_in "Password", with: 'Hunter2'
+      fill_in "Password Confirmation", with: 'Hunter2'
+      click_button "Register"
+      expect(current_path).to eq('/dashboard')
+      expect(page).to have_content("Welcome email@email.com, you are now registered and logged in!")
+    end
 
-    visit '/registation'
+    it "has a flash message if password and password confirmation do not match" do
+      visit '/registration'
+      fill_in "Email" , with: "email@email.com"
+      fill_in "Password", with: 'Hunter2'
+      click_button "Register"
+      expect(current_path).to eq('/registration')
+      expect(page).to have_content("Password confirmation doesn't match Password")
+    end
 
-    end 
+    it "has a flash message if email is left blank" do
+      visit '/registration'
+      fill_in "Password", with: 'Hunter2'
+      fill_in "Password Confirmation", with: 'Hunter2'
+      click_button "Register"
+      expect(current_path).to eq('/registration')
+      expect(page).to have_content("Email can't be blank")
+    end
   end
 end
-
-
-
-
-#   When a user visits the '/registration' path they should see a form to register.
-# The form should include:
-#
-#  Email
-#  Password
-#  Password Confirmation
-#  Register Button
-# Once the user registers they should be logged in and redirected to the dashboard page
