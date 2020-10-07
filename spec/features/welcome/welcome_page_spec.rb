@@ -7,7 +7,7 @@ RSpec.describe "When a user visits the root path they should be on the welcome p
 
     expect(page).to have_content("Welcome to Viewing Party!")
     expect(page).to have_link("Join Today!")
-    expect(page).to have_button("Already a member? Log In Here!")
+    expect(page).to have_content("Already a member? Log In:")
   end
 
 end
