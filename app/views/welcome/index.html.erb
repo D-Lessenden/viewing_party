@@ -1,0 +1,20 @@
+<h1 style="color:cornsilk;"> Welcome to Viewing Party! </h1>
+
+<h3 style="color:navy;"> Want to watch a movie with your friends but can't get together because COVID-19 ruined your plans? We got the app for you! <br>
+  Viewing Party will allow you to create an event for you and your friends to watch a movie together, so get ready to have fun together from the comfort of your own home! </h3>
+
+<h2> <%= link_to "Join Today!", "/registration" %> </h2>
+
+<h2 style="color:cornsilk;"> Already a member? Log In: </h2>
+
+<%= form_with model: @user, local: true do |f| %>
+
+<%= f.label :username %> <br>
+<%= f.text_field :username, id: "Username" %> <br>
+
+<%= f.label :password %> <br>
+<%= f.text_field :password, value: nil, id: "Password" %> <br>
+
+<%= f.submit "Log In" %>
+
+<% end %>
