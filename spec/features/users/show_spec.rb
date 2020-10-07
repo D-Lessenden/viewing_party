@@ -1,11 +1,3 @@
-# As an authenticated user,
-# When I visit '/dashboard'
-# I should see:
-#
-#  'Welcome <username>!' at the top of page
-#  9 A button to Discover Movies
-#  10 A friends section
-#  11 A viewing parties section
 require 'rails_helper'
 
 RSpec.describe 'user dashboard', type: :feature do
@@ -23,6 +15,7 @@ RSpec.describe 'user dashboard', type: :feature do
         expect(page).to have_content("Welcome #{@user.username}!")
         expect(page).to have_button("Add Friend")
         expect(page).to have_button("Discover Movies")
+        expect(page).to have_content("You currently have no friends.")
       end
     end
 end
