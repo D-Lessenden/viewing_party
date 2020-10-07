@@ -2,6 +2,9 @@
 
 <%= form_with model: @user, local: true do |f| %>
 
+  <%= f.label :username %>
+  <%= f.text_field :username, id: "Username" %>
+
   <%= f.label :email %>
   <%= f.text_field :email, id: "Email" %>
 
