@@ -3,7 +3,6 @@
 
 <h3><%= "Friends" %></h3>
 <%=  button_to 'Add Friend' %>
-<%# binding.pry %>
 <% if current_user.followers.count == 0 %>
   <%= "You currently have no friends." %>
 <% else %>
