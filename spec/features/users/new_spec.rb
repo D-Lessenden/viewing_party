@@ -4,12 +4,13 @@ RSpec.describe "As a user" do
   describe "When I visit the registration page" do
     it "has a form that includes email, password, and password confirmation" do
       visit '/registration'
+      fill_in "Username" , with: "Some clever name"
       fill_in "Email" , with: "email@email.com"
       fill_in "Password", with: 'Hunter2'
       fill_in "Password Confirmation", with: 'Hunter2'
       click_button "Register"
       expect(current_path).to eq('/dashboard')
-      expect(page).to have_content("Welcome email@email.com, you are now registered and logged in!")
+      expect(page).to have_content("Welcome Some clever name, you are now registered and logged in!")
     end
 
     it "has a flash message if password and password confirmation do not match" do
