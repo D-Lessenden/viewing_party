@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   #resources :movies, :only => [:index]
   get '/discover', to: 'movies#index'
+  get '/movies', to: 'movies#search'
 
 end
