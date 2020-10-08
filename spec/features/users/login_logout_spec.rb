@@ -36,13 +36,17 @@ RSpec.describe "As a registered user, I can log in and log out" do
   end
 
   it "allows a user to log out" do
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    visit root_path
 
-    visit "/dashboard"
+    fill_in "Username", with: @user.username
+    fill_in "Password", with: @user.password
+    click_button "Log In"
+
     click_link "Log Out"
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content("You have logged out. See you next time!")
+    expect(page).to_not have_link("Log Out")
   end
 
 end
