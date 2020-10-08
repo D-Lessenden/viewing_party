@@ -3,10 +3,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def show
-    @user = User.find(current_user.id)
-  end
-
   def create
     @user = User.new(user_params)
     if @user.save
@@ -18,6 +14,10 @@ class UsersController < ApplicationController
       @user.email = '' if @user.errors.details.keys.include?(:email)
       redirect_to '/registration'
     end
+  end
+
+  def show
+    @user = User.find(current_user.id)
   end
 
   private
