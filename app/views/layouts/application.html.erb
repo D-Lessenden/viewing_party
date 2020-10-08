@@ -9,6 +9,13 @@
   </head>
 
   <body style="background-color:darkseagreen; text-align:center;">
+
+    <% if current_user %>
+      <nav>
+        <p> <%= current_user.username %>'s Account </p>
+      </nav>
+    <% end %>
+
     <main>
       <% flash.each do |name, msg| %>
         <div class= "<%=name%>-flash">
