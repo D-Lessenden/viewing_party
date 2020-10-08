@@ -26,6 +26,23 @@ RSpec.describe "As a registered user, I can log in and log out" do
     expect(current_path).to eq("/")
     # expect(page).to have_content("Incorrect email or password")
     expect(page).to have_button("Log In")
+
+    fill_in "Username", with: "Cool Dude"
+    fill_in "Password", with: @user.password
+
+    expect(current_path).to eq("/")
+    # expect(page).to have_content("Incorrect email or password")
+    expect(page).to have_button("Log In")
+  end
+
+  it "allows a user to log out" do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
+    visit "/dashboard"
+    click_link "Log Out"
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("You have logged out. See you next time!")
   end
 
 end
