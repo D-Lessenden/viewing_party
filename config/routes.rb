@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/dashboard', to: 'users#show'
 
+  resources :movies, :only => [:index]
+
 end
