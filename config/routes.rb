@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/dashboard', to: 'users#show'
 
-  #resources :movies, :only => [:index]
-  get '/discover', to: 'movies#index'
-  get '/movies', to: 'movies#search'
+  resources :movies, :only => [:index]
+  get '/discover', to: 'discover#index'
+  # get '/movies', to: 'movies#search'
 
 end
