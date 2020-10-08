@@ -6,9 +6,9 @@ RSpec.describe "As an authenticated user" do
       visit '/discover'
       expect(page).to have_button("Discover Top 40")
       click_button "Discover Top 40"
-      # save_and_open_page
       expect(current_path).to eq('/movies')
       expect(page).to have_button("Search by Movie Title")
+      click_button "Search by Movie Title"
     end
   end
 end
