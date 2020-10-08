@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   get '/', to: 'sessions#new'
   post '/', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  
+  #resources :movies, :only => [:index]
+  get '/discover', to: 'movies#index'
+
 end
