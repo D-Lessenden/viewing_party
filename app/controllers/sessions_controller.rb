@@ -10,4 +10,10 @@ class SessionsController < ApplicationController
       flash[:notice] = 'Incorrect email or password'
     end
   end
+
+  def destroy
+    session.delete(:user_id)
+    flash[:notice] = 'You have logged out. See you next time!'
+    redirect_to root_path
+  end
 end
