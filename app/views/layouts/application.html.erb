@@ -13,6 +13,7 @@
     <% if current_user %>
       <nav>
         <p> <%= current_user.username %>'s Account </p>
+        <%= link_to "Log Out", "/logout", method: :get %>
       </nav>
     <% end %>
 
