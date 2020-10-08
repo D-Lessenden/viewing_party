@@ -7,7 +7,6 @@ RSpec.describe "As a registered user, I can log in and log out" do
   end
 
   it "allows me to log in with the correct credentials" do
-
     visit root_path
 
     fill_in "Username", with: @user.username
@@ -18,5 +17,15 @@ RSpec.describe "As a registered user, I can log in and log out" do
     expect(page).to have_content("#{@user.username}'s Account")
   end
 
+  it "won't log in with incorrect credentials" do
+    visit root_path
+
+    fill_in "Username", with: @user.username
+    fill_in "Password", with: "cooldude"
+
+    expect(current_path).to eq("/")
+    expect(page).to have_content("Incorrect email or password")
+    expect(page).to have_button("Log In")
+  end
 
 end
