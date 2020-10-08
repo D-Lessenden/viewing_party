@@ -21,7 +21,9 @@ RSpec.describe 'user dashboard', type: :feature do
       it "has a functional button for the Discover Movies button" do
         visit '/dashboard'
         click_button "Discover Movies"
+        save_and_open_page 
         expect(current_path).to eq('/movies')
+        expect(page).to have_content("Discover Your Next Favorite Movie!")
       end
     end
 end
