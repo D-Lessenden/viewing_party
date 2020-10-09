@@ -1,4 +1,3 @@
-<%#binding.pry %>
 <h3>Find a Different Movie Here</h3>
 <%= form_tag('/movies/search', method: :get) do %>
   <%= text_field_tag(:search, params[:search]) %>
@@ -12,6 +11,3 @@
       <p><%= film[:original_title] %> <%= "Voter Average: #{film[:vote_average]}" %></p>
     <% end %>
 <% end %>
-<%#binding.pry %>
-<%# need to add test %>
-<%# and sad path test %>
