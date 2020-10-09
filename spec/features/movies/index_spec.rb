@@ -9,7 +9,6 @@ RSpec.describe "As an authenticated user" do
       fill_in 'search', with: "Fight"
       click_button "Search by Movie Title"
       expect(current_path).to eq('/movies/search')
-      save_and_open_page
     end
   end
 end
