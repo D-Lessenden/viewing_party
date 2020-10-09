@@ -4,8 +4,12 @@ RSpec.describe "As an authenticated user" do
   describe "when I visit the movies page" do
     it "has a field to search for movies" do
       visit '/movies'
+       # save_and_open_page
       expect(page).to have_button("Search by Movie Title")
+      expect(page).to have_content("Find a Movie Here")
+      fill_in 'search', with: "Fight"
       click_button "Search by Movie Title"
+      # binding.pry
     end
   end
 end
