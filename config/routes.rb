@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   get '/movies/search', to: 'movies#search'
   resources :discover, :only => [:index]
 
+  get '/', to: 'sessions#new'
+  post '/', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+
 end
