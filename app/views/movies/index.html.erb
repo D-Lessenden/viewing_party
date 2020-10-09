@@ -1,4 +1,3 @@
-<%# movies %>
 <h1><%= "Top 40 Movies" %></h1>
 <h3>Find a Movie Here</h3>
 <%= form_tag('/movies/search', method: :get) do %>
@@ -11,7 +10,3 @@
 <% @json2[:results].each do |film| %>
 <p><%= film[:original_title] %> <%= "Voter Average: #{film[:vote_average]}" %></p>
 <% end %>
-
-
-<%#binding.pry %>
-<%# key to this will be using VCR  %>
