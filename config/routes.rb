@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
 
   resources :movies, :only => [:index]
-  get '/discover', to: 'discover#index'
-  # get '/movies', to: 'movies#search'
+  get '/movies/search', to: 'movies#search'
+  resources :discover, :only => [:index]
 
 end
