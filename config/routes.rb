@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   post '/', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
+  get "/movies/:id", to: 'movies#show' 
+
 end

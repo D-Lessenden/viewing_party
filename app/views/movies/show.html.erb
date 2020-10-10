@@ -1,0 +1,24 @@
+
+<%# Button to create a viewing party %>
+
+<h1><%= @json[:original_title] %></h1>
+<%=  button_to 'Create Viewing Party' %>
+<p>Vote Average:<%= @json[:vote_average] %></p>
+<% "runtime" %>
+<p>Genre:</p>
+<% @json[:genres].each do |genre| %>
+  <p><%= genre[:name] %></p>
+<% end  %>
+<p>Summary: <%= @json[:overview] %></p>
+<% "first 10 cast members" %>
+<p> Number of Votes: <%= @json[:vote_count] %></p>
+<% "review's author and info" %>
+
+<%# Movie Title
+ Vote Average of the movie
+ Runtime in hours & minutes
+ Genere(s) associated to movie
+ Summary description
+ List the first 10 cast members (characters&actress/actors)
+ Count of total reviews
+ Each review's author and information %>
