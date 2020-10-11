@@ -27,7 +27,8 @@ class MoviesController < ApplicationController
     cast_response = conn.get("/3/movie/#{params[:id]}/credits?api_key=c74a8c939b809c17fcffb22fc6e5fd03")
     review_response = conn.get("/3/movie/#{params[:id]}/reviews?api_key=c74a8c939b809c17fcffb22fc6e5fd03&language=en-US")
     @json = JSON.parse(response.body, symbolize_names: true)
-    @cast = JSON.parse(cast_response.body, symbolize_names: true)
+    cast = JSON.parse(cast_response.body, symbolize_names: true)
+    @first_10_cast = cast[:cast].first(10)
     @reviews = JSON.parse(review_response.body, symbolize_names: true)
   end
 
