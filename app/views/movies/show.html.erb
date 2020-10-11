@@ -2,15 +2,15 @@
 <% button_to 'Create New Viewing Party' %>
 <h1><%= @json[:original_title] %></h1>
 <%=  button_to 'Create Viewing Party' %>
-<p>Vote Average:<%= @json[:vote_average] %></p>
-<%= "Runtime: #{@json[:runtime]} minutes" %>
+<p>Vote Average: <%= @json[:vote_average] %></p>
+<%= "Runtime: #{@json[:runtime]/60} h #{@json[:runtime] % 60} min" %>
 <p>Genre:</p>
 <% @json[:genres].each do |genre| %>
   <p><%= genre[:name] %></p>
 <% end  %>
 <p>Summary: <%= @json[:overview] %></p>
-<%= "Cast" %>
-<% @cast[:cast].each do |character| %>
+<h3><%= "Cast" %></h3>
+<% @first_10_cast.each do |character| %>
 <p><%= "#{character[:character]} played by #{character[:name]}" %></p>
 <% end %>
 
@@ -18,7 +18,7 @@
 
 
 <p> Number of Votes: <%= @json[:vote_count] %></p>
-<h2><%= "REVIEWS" %></h2>
+<h3><%= "REVIEWS" %></h3>
 <% @reviews[:results].each do |review| %>
   <p><%= "Reviewer: #{review[:author]}" %></p>
   <p><%= review[:content] %></p>
