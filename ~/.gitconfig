@@ -1,0 +1,9 @@
+[user]
+  email = judith.pillado@gmail.com
+  name = judith pillado
+
+[commit]
+  template = ~/.gitmessage
+
+[core]
+  editor = atom --wait
