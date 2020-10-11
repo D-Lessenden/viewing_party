@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :movies, :only => [:index]
   get '/movies/search', to: 'movies#search'
+  # get '/movies/:id', to: 'movies#show'
   resources :discover, :only => [:index]
 
   get '/', to: 'sessions#new'

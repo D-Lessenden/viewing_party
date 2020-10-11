@@ -1,0 +1,26 @@
+
+<%# button_to 'Create New Viewing Party', "/discover", method: :get %>
+<%# binding.pry  %>
+<h1><%= @json[:original_title] %></h1>
+<%=  button_to 'Create Viewing Party' %>
+<p>Vote Average:<%= @json[:vote_average] %></p>
+<% "runtime" %>
+<p>Genre:</p>
+<% @json[:genres].each do |genre| %>
+  <p><%= genre[:name] %></p>
+<% end  %>
+<p>Summary: <%= @json[:overview] %></p>
+<%= "Cast" %>
+<% @cast[:cast].each do |character| %>
+<p><%= "#{character[:character]} played by #{character[:name]}" %></p>
+<% end %>
+
+
+
+<p> Number of Votes: <%= @json[:vote_count] %></p>
+<% "review's author and info" %>
+
+<%#
+ Runtime in hours & minutes
+ List the first 10 cast members (characters&actress/actors)
+ Each review's author and information %>
