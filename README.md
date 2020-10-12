@@ -20,3 +20,20 @@ Viewing party is an application in which users can explore movie options and cre
 - Rails 5.2.4.3
 
 Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party/wireframes)
+
+
+## Setup Instructions
+
+
+First, set up a local server in your terminal: 
+
+```
+git clone git@github.com:judithpillado/viewing_party.git
+cd viewing_party
+bundle install
+rails db:{drop,create,migrate,seed}
+rails s
+```
+
+Then, in your browser: go to `localhost:3000`
+
