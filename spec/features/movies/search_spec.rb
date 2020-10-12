@@ -6,13 +6,10 @@ RSpec.describe "As an authenticated user" do
 
       search_response = File.read('spec/fixtures/search_result_fight.json')
 
-      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=c74a8c939b809c17fcffb22fc6e5fd03&query=fight").
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=fight").
         with(
           headers: {
-         'Accept'=>'*/*',
-         'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-         'Api-Key'=>'c74a8c939b809c17fcffb22fc6e5fd03',
-         'User-Agent'=>'Faraday v1.0.1'
+         'Api-Key'=>ENV['MOVIE_API_KEY']
           }).
         to_return(status: 200, body: search_response)
 
