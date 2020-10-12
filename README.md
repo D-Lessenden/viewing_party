@@ -1,6 +1,6 @@
 # Viewing Party
 
-This is the base repo for the [viewing party project](https://backend.turing.io/module3/projects/viewing_party) used for Turing's Backend Module 3. It was completed by [Judith Pillado](https://github.com/judithpillado) [her LinkedIn can be found here.](https://www.linkedin.com/in/judith-pillado/) and [Daniel Lessenden](https://github.com/D-Lessenden/)[His LinkedIn profile](https://www.linkedin.com/in/lessenden/).
+This is the base repo for the [viewing party project](https://backend.turing.io/module3/projects/viewing_party) used for Turing's Backend Module 3. It was completed by [Judith Pillado](https://github.com/judithpillado) [her LinkedIn can be found here.](https://www.linkedin.com/in/judith-pillado/) and [Daniel Lessenden.](https://github.com/D-Lessenden/) [His LinkedIn profile](https://www.linkedin.com/in/lessenden/).
 
 ### About this Project
 
