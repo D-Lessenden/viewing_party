@@ -14,7 +14,7 @@
   <% current_user.followed.each do |followed| %>
   <p>Friends:</p>
   <p><%= "Username: #{followed.username}" %></p>
-  <p><%= "Email:#{followed.email}" %></p>
+  <p><%= "Email: #{followed.email}" %></p>
   <p>-----------</p>
   <% end %>
 <% end %>
