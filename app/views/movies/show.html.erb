@@ -16,9 +16,8 @@
 
 
 
-
-<p> Number of Votes: <%= @json[:vote_count] %></p>
 <h3><%= "REVIEWS" %></h3>
+<p> Number of Reviews: <%= @reviews[:results].count %></p>
 <% @reviews[:results].each do |review| %>
   <p><%= "Reviewer: #{review[:author]}" %></p>
   <p><%= review[:content] %></p>
