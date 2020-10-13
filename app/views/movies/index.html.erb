@@ -1,0 +1,17 @@
+<h1><%= "Top 40 Movies" %></h1>
+<h3>Find a Movie Here</h3>
+
+<%= form_tag(movies_search_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag ("Search by Movie Title") %> <br>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag ("Find Top Rated Movies") %>
+<% end %>
+
+<% @json1[:results].each do |film| %>
+  <p><%= link_to film[:original_title], "/movies/#{film[:id]}" %> <%= "Vote Average: #{film[:vote_average]}" %></p>
+<% end %>
+
+<% @json2[:results].each do |film| %>
+  <p><%= link_to film[:original_title], "/movies/#{film[:id]}" %> <%= "Vote Average: #{film[:vote_average]}" %></p>
+<% end %>

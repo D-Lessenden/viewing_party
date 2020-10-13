@@ -8,8 +8,21 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+  <body style="background-color:darkseagreen; text-align:center;">
+
+    <% if current_user %>
+      <nav>
+        <p> <%= current_user.username %>'s Account </p>
+        <%= link_to "Log Out", "/logout", method: :get %>
+      </nav>
+    <% end %>
+
     <main>
+      <% flash.each do |name, msg| %>
+        <div class= "<%=name%>-flash">
+          <p><%= msg %></p>
+        </div>
+      <% end %>
       <%= yield %>
     </main>
     <footer>
