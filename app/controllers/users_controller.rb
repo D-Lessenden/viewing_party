@@ -25,10 +25,8 @@ class UsersController < ApplicationController
     if friend.empty?
       flash[:error] = "Could not find a user with that email"
     else
-      a = Friendship.create(followed_id: friend.first.id, follower_id: current_user.id)
+      @friendship = Friendship.create(followed_id: friend.first.id, follower_id: current_user.id)
       flash[:success] = "#{params[:friend]} has been added to your friends!"
-      # binding.pry
-      #need to find a way to link followed with id, will be AR
     end
     redirect_to '/dashboard'
   end
