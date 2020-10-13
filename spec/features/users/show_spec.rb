@@ -33,14 +33,32 @@ RSpec.describe 'user dashboard', type: :feature do
         expect(page).to have_content("Discover Your Next Favorite Movie!")
       end
 
-      it "has a field where you can add a friend" do
+      it "has a field where you can add a friend, sad path" do
+        visit '/dashboard'
+        fill_in :friend, with: 'frgwergewgewtg'
+        click_on 'Add Friend'
+        expect(current_path).to eq('/dashboard')
+        expect(page).to have_content("Could not find a user with that email")
+      end
+
+      it "has a field where you can add a friend, happy path" do
         visit '/dashboard'
         fill_in :friend, with: 'friend@email.com'
         click_on 'Add Friend'
-        #check to make sure table exists
-        #check sad path.
-        #add flashes to both 
+        expect(current_path).to eq('/dashboard')
+        expect(page).to have_content("#{@friend.email} has been added to your friends!")
+      end
 
+      it "has a list of friends" do
+        visit '/dashboard'
+        fill_in :friend, with: 'friend@email.com'
+        click_on 'Add Friend'
+
+        expect(current_path).to eq('/dashboard')
+        expect(page).to_not have_content("You currently have no friends.")
+        expect(page).to have_content("Friends")
+        expect(page).to have_content("Username: #{@friend.username}")
+        expect(page).to have_content("Email: #{@friend.email}")
       end
     end
 end
