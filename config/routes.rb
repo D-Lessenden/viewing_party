@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/dashboard', to: 'users#show'
 
-  resources :movies, :only => [:index, :show]
   get '/movies/search', to: 'movies#search'
+  resources :movies, :only => [:index, :show]
   resources :discover, :only => [:index]
+
 
   get '/', to: 'sessions#new'
   post '/', to: 'sessions#create'
