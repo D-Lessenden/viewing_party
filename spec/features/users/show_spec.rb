@@ -53,7 +53,6 @@ RSpec.describe 'user dashboard', type: :feature do
         visit '/dashboard'
         fill_in :friend, with: 'friend@email.com'
         click_on 'Add Friend'
-
         expect(current_path).to eq('/dashboard')
         expect(page).to_not have_content("You currently have no friends.")
         expect(page).to have_content("Friends")
