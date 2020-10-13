@@ -6,7 +6,6 @@ RSpec.describe "As an authenticated user" do
 
       json_response2 = File.read("spec/fixtures/next_20_movies.json")
 
-
       stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=c74a8c939b809c17fcffb22fc6e5fd03&page=2").
         with(
           headers: {
@@ -29,17 +28,35 @@ RSpec.describe "As an authenticated user" do
           }).
         to_return(status: 200, body: json_response1 )
 
+        search = File.read("spec/fixtures/search_result.json")
 
-        # expect(page).to have_button("Search by Movie Title")
-        # expect(page).to have_content("Find a Movie Here")
+        stub_request(:get, "https://api.themoviedb.org/3/movie/search?api_key=c74a8c939b809c17fcffb22fc6e5fd03").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'Api-Key'=>'c74a8c939b809c17fcffb22fc6e5fd03',
+       	  'User-Agent'=>'Faraday v1.0.1'
+           }).
+         to_return(status: 200, body: search, headers: {})
+
+         credits = File.read("spec/fixtures/show_credits.json")
+
+         stub_request(:get, "https://api.themoviedb.org/3/movie/search/credits?api_key=c74a8c939b809c17fcffb22fc6e5fd03").
+      with(
+        headers: {
+       'Accept'=>'*/*',
+       'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       'Api-Key'=>'c74a8c939b809c17fcffb22fc6e5fd03',
+       'User-Agent'=>'Faraday v1.0.1'
+        }).
+      to_return(status: 200, body: credits, headers: {})
+
+
+        visit '/movies'
+        expect(page).to have_button("Search by Movie Title")
+        expect(page).to have_content("Find a Movie Here")
     end
-    # it "has a field to search for movies" do
-    #   visit '/movies'
-    #   expect(page).to have_button("Search by Movie Title")
-    #   expect(page).to have_content("Find a Movie Here")
-    #   # fill_in 'search', with: "Fight"
-    #   # click_button "Search by Movie Title"
-    #   # expect(current_path).to eq('/movies/search')
-    # end
+
   end
 end
