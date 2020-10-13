@@ -12,11 +12,6 @@ RSpec.describe "As an authenticated user" do
          'Api-Key'=>ENV['MOVIE_API_KEY']
           }).
         to_return(status: 200, body: search_response)
-
-      # visit '/movieqs/search'
-       # fill_in 'search', with: "fight"
-       # click_button "Search by Movie Title"
-       # expect(current_path).to eq('/movies/search')
     end
   end
 end
