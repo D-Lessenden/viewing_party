@@ -20,7 +20,6 @@ RSpec.describe "Movies Page as an authenticated user" do
 
   it "if a non-authenticated user visits the page they recieve an error", :vcr do
     visit "/movies"
-    save_and_open_page
     expect(page).to have_content("The page you were looking for doesn't exist.")
   end
 end
