@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   get '/parties/new', to: 'parties#new'
+  post '/parties', to: 'parties#create'
 end
