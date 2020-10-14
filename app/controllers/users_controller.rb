@@ -17,7 +17,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    unless current_user != nil
+      render file: "/public/404"
+    end
+    # @user = User.find(current_user.id)
   end
 
   def add_friend
