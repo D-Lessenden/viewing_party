@@ -2,16 +2,21 @@ require 'rails_helper'
 
 RSpec.describe "As an authenticated user" do
   describe "when I visit the movie search page" do
-    it "has a field to search for movies" do
+    it "has a field to search for movies", :vcr do
+      @user = User.create!(
+                      username: 'USERNAME',
+                      email: 'example@email.com',
+                      password: 'Hunter2',
+                      role: 0
+                      )
 
-      search_response = File.read('spec/fixtures/search_result_fight.json')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
-      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=fight").
-        with(
-          headers: {
-         'Api-Key'=>ENV['MOVIE_API_KEY']
-          }).
-        to_return(status: 200, body: search_response)
+      visit '/movies'
+      expect(page).to have_button("Search by Movie Title")
+      fill_in :search, with: 'fight'
+      click_on 'Search by Movie Title'
+      expect(current_path).to eq('/movies/search')
     end
   end
 end

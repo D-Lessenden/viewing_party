@@ -1,0 +1,7 @@
+<h1><%= "Top 40 Shows" %></h1>
+<% @json1[:results].each do |show| %>
+  <p><%= link_to show[:original_name], "/shows/#{show[:id]}" %> <%= "Vote Average: #{show[:vote_average]}" %></p>
+<% end %>
+<% @json2[:results].each do |show| %>
+<p><%= link_to show[:original_name], "/shows/#{show[:id]}" %> <%= "Vote Average: #{show[:vote_average]}" %></p>
+<% end %>
