@@ -1,8 +1,7 @@
 class MoviesController < ApplicationController
   def index
-    unless current_user != nil
-      render file: "/public/404"
-    end
+    render file: '/public/404' if current_user.nil?
+
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.headers['API-Key'] = ENV['MOVIE_API_KEY']
     end

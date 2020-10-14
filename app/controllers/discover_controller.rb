@@ -1,7 +1,5 @@
 class DiscoverController < ApplicationController
   def index
-    unless current_user != nil
-      render file: "/public/404"
-    end
+    render file: '/public/404' if current_user.nil?
   end
 end
