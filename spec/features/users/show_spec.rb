@@ -1,23 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe 'user dashboard', type: :feature do
-  before :each do
-    @user = User.create!(
-                    username: 'USERNAME',
-                    email: 'example@email.com',
-                    password: 'Hunter2',
-                    role: 0
-                    )
-
-    @friend = User.create!(
-                    username: 'FRIEND',
-                    email: 'friend@email.com',
-                    password: 'Hunter2',
-                    role: 0
-                    )
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+  describe "as a non-authenticated user" do
+    it "has an error message" do
+    visit '/dashboard'
+    expect(page).to have_content("The page you were looking for doesn't exist.")
+    end
   end
+
     describe 'As an authenticated user when I visit my dashboard' do
+      before :each do
+        @user = User.create!(
+                        username: 'USERNAME',
+                        email: 'example@email.com',
+                        password: 'Hunter2',
+                        role: 0
+                        )
+
+        @friend = User.create!(
+                        username: 'FRIEND',
+                        email: 'friend@email.com',
+                        password: 'Hunter2',
+                        role: 0
+                        )
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      end
+
       it "has a welcome message, a button to discover movies, friend section, and a viewing party section" do
         visit '/dashboard'
         expect(page).to have_content("Welcome #{@user.username}!")
