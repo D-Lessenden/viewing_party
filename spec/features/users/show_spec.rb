@@ -30,8 +30,6 @@ RSpec.describe 'As an authenticated user, when I visit my dashboard', type: :fea
   it 'displays all of the parties the user has scheduled with pertinent information' do
     visit '/dashboard'
 
-    expect(page).to have_link('Create New Party!', href: '/parties/new')
-
     expect(page).to have_content("Movie Title: #{@party1.movie_title}")
     expect(page).to have_content("Duration: #{@party1.duration} minutes")
     expect(page).to have_content("Date: #{@party1.date}")
