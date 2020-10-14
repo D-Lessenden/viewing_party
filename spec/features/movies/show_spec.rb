@@ -39,7 +39,7 @@ RSpec.describe 'Movie Show', type: :feature do
 
 
        visit "/movies/#{550}"
-       expect(page).to have_button("Create Viewing Party")
+       expect(page).to have_link("Create Viewing Party for Movie", href: '/parties/new')
     end
   end
 end
