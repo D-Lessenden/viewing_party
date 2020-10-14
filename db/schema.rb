@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2020_10_13_203440) do
     t.index ["follower_id"], name: "index_friendships_on_follower_id"
   end
 
+  create_table "parties", force: :cascade do |t|
+    t.string "movie_title"
+    t.integer "duration"
+    t.string "date"
+    t.string "start_time"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_parties_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -31,18 +42,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_203440) do
     t.string "username"
   end
 
-  create_table "viewing_parties", force: :cascade do |t|
-    t.string "movie_title"
-    t.integer "duration"
-    t.string "date"
-    t.string "start_time"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_viewing_parties_on_user_id"
-  end
-
   add_foreign_key "friendships", "users", column: "followed_id"
   add_foreign_key "friendships", "users", column: "follower_id"
-  add_foreign_key "viewing_parties", "users"
+  add_foreign_key "parties", "users"
 end
