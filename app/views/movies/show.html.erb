@@ -1,7 +1,6 @@
-
-<% button_to 'Create New Viewing Party' %>
 <h1><%= @json[:original_title] %></h1>
-<%=  link_to 'Create Viewing Party for Movie', '/parties/new' %>
+<%=  link_to 'Create Viewing Party for Movie',
+"/movies/#{@json[:id]}/parties/new", method: :get %>
 <p>Vote Average: <%= @json[:vote_average] %></p>
 <%= "Runtime: #{@json[:runtime]/60} h #{@json[:runtime] % 60} min" %>
 <p>Genre:</p>

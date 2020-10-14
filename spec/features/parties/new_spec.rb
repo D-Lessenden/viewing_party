@@ -13,15 +13,15 @@ RSpec.describe 'Create a New Party Page' do
     visit "/movies/#{550}"
     click_link 'Create Viewing Party for Movie'
 
-    expect(current_path).to eq('/parties/new')
+    expect(current_path).to eq("/movies/#{550}/parties/new")
     expect(page).to have_content('Viewing Party Details')
-
-    expect(page).to have_content('Movie Title')
-    expect(page).to have_content('Duration of Party')
+    save_and_open_page
+    expect(page).to have_content('Movie title')
+    expect(page).to have_content('Duration of party')
     expect(page).to have_content('Day')
-    expect(page).to have_content('Start Time')
+    expect(page).to have_content('Start time')
 
-    click_on 'Create Party'
+    click_on 'Create party'
     expect(current_path).to eq('/dashboard')
   end
 

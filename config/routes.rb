@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  get '/parties/new', to: 'parties#new'
-  post '/parties', to: 'parties#create'
+  get 'movies/:id/parties/new', to: 'parties#new'
+  post 'movies/parties', to: 'parties#create'
+  
 end
