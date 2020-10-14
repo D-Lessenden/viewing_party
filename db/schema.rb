@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_203440) do
+ActiveRecord::Schema.define(version: 2020_10_14_011128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,9 +40,12 @@ ActiveRecord::Schema.define(version: 2020_10_13_203440) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.bigint "party_id"
+    t.index ["party_id"], name: "index_users_on_party_id"
   end
 
   add_foreign_key "friendships", "users", column: "followed_id"
   add_foreign_key "friendships", "users", column: "follower_id"
   add_foreign_key "parties", "users"
+  add_foreign_key "users", "parties"
 end
