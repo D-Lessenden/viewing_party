@@ -8,6 +8,9 @@
 <% else %>
   <h2><%= "Search Results for #{params[:search]}" %></h2>
     <% @films.each do |film| %>
-    <p><%= link_to film[:original_title], "/movies/#{film[:id]}" %> <%= "Voter Average: #{film[:vote_average]}" %></p>
+      <p><%= link_to film[:original_title], "/movies/#{film[:id]}" %> <%= "Voter Average: #{film[:vote_average]}" %></p>
+    <% end %>
+    <% @films2.each do |film| %>
+      <p><%= link_to film[:original_title], "/movies/#{film[:id]}" %> <%= "Voter Average: #{film[:vote_average]}" %></p>
     <% end %>
 <% end %>
