@@ -30,13 +30,13 @@ RSpec.describe 'user dashboard', type: :feature do
         visit '/dashboard'
         expect(page).to have_content("Welcome #{@user.username}!")
         expect(page).to have_button("Add Friend")
-        expect(page).to have_button("Discover Movies")
+        expect(page).to have_button("Discover Movies and Shows")
         expect(page).to have_content("You currently have no friends.")
       end
 
       it "has a functional button for the Discover Movies button" do
         visit '/dashboard'
-        click_button "Discover Movies"
+        click_button "Discover Movies and Shows"
         expect(current_path).to eq('/discover')
         expect(page).to have_content("Discover Your Next Favorite Movie!")
       end
