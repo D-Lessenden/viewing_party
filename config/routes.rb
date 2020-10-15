@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/movies/:id/parties/new', to: 'parties#new'
   post '/movies/:id/parties', to: 'parties#create'
+  resources :parties, :only => [:index]
 
   get '/movies/search', to: 'movies#search'
   resources :movies, :only => [:index, :show]
