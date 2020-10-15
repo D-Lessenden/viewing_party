@@ -1,0 +1,9 @@
+<h1>Your Parties</h1>
+<% current_user.parties.each do |party| %>
+  <h2>Movie</h2>
+  <%= party.movie_title %>
+  <h3>Date</h3>
+  <%= party.date %>
+  <h3>Time</h3>
+  <%= party.start_time %>
+<% end %>

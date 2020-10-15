@@ -17,6 +17,7 @@
     <%= "You currently have no friends to add to this view party!" %> <br>
   <% else %>
     <% current_user.followed.each do |followed| %>
+    <%= f.label followed.username %> <br>
     <%= f.check_box followed.username %> <br>
   <% end %>
 <% end %>
