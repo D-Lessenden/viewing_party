@@ -11,7 +11,6 @@ class User < ApplicationRecord
 
   has_many :followers, through: :followed_users
   has_many :followed, through: :following_users
-  
   has_many :parties
 end
 
