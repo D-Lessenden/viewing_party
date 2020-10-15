@@ -42,7 +42,6 @@ password
 ```
 Go to the Discover Movies Page. Search for the film you would like to see. Click on that movie's link and then click `Create Viewing Party`
 
-*maybe add some screen shots 
 
 ## Project Goals 
 
