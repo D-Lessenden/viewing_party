@@ -40,7 +40,6 @@ RSpec.describe 'Movie Show', type: :feature do
 
        visit "/movies/#{550}"
        expect(page).to have_link("Create Viewing Party for Movie", href: "/movies/#{550}/parties/new")
-       expect(page).to have_button("Create Viewing Party")
        expect(page).to have_content("Vote Average")
        expect(page).to have_content("Runtime")
        expect(page).to have_content("Genre(s)")
