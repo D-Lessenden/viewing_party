@@ -1,0 +1,14 @@
+<h1><%= @json[:name] %></h1>
+<%= "Vote Average: #{@json[:vote_average]}"%>
+<h2>Genre(s)</h2>
+<% @json[:genres].each do |genre| %>
+  <%= genre[:name] %>
+<% end %>
+<h2>Overview</h2>
+<%= @json[:overview] %>
+<h2>Number of Seasons</h2>
+<%= @json[:number_of_seasons] %>
+<h2>Number of Episodes</h2>
+<%= @json[:number_of_episodes] %>
+<h2>Show Status</h2>
+<%= @json[:status] %>

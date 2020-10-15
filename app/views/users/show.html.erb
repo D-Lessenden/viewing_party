@@ -1,13 +1,22 @@
 <h1><%= "Welcome #{current_user.username}!" %></h1>
-<%=  button_to 'Discover Movies', "/discover", method: :get %>
+<%=  button_to 'Discover Movies and Shows', "/discover", method: :get %>
 
 <h3><%= "Friends" %></h3>
-<%=  button_to 'Add Friend' %>
-<% if current_user.followers.count == 0 %>
+<%= form_tag("/users/add_friend", method: :post) do %>
+  <%= text_field_tag(:friend, params[:friend]) %>
+  <%= submit_tag ('Add Friend') %>
+<% end %>
+
+<% if current_user.followed.count == 0 %>
   <%= "You currently have no friends." %>
 <% else %>
-  <%# current_user.followers.each do |follower| %>
-  <%# follower %>
+
+  <% current_user.followed.each do |followed| %>
+  <p>Friends:</p>
+  <p><%= "Username: #{followed.username}" %></p>
+  <p><%= "Email: #{followed.email}" %></p>
+  <p>-----------</p>
+  <% end %>
 <% end %>
 
 <h3><%= link_to "Viewing Parties", "/parties" %></h3>
