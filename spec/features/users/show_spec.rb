@@ -61,7 +61,7 @@ RSpec.describe 'user dashboard', type: :feature do
         expect(page).to have_content("Username: #{@friend.username}")
         expect(page).to have_content("Email: #{@friend.email}")
       end
-       
+
      it 'displays all of the parties the user has scheduled with pertinent information' do
         visit '/dashboard'
 
