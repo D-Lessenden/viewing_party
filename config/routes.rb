@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/dashboard', to: 'users#show'
 
+  get '/movies/:id/parties/new', to: 'parties#new'
+  post '/movies/:id/parties', to: 'parties#create'
+
   get '/movies/search', to: 'movies#search'
   resources :movies, :only => [:index, :show]
   resources :discover, :only => [:index]
@@ -14,7 +17,4 @@ Rails.application.routes.draw do
   post '/', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  get 'movies/:id/parties/new', to: 'parties#new'
-  post 'movies/parties', to: 'parties#create'
-  
 end

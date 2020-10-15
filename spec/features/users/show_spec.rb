@@ -34,7 +34,6 @@ RSpec.describe 'As an authenticated user, when I visit my dashboard', type: :fea
     expect(page).to have_content("Duration: #{@party1.duration} minutes")
     expect(page).to have_content("Date: #{@party1.date}")
     expect(page).to have_content("Start Time: #{@party1.start_time}")
-
     expect(page).to_not have_content(@party2.movie_title)
   end
 
