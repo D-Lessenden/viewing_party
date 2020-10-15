@@ -1,0 +1,26 @@
+<h1> Viewing Party Details </h1>
+
+<p> Movie Title: <%= @film[:original_title] %> </p>
+
+<%= form_with model: @party, url: "/movies/#{@film[:id]}/parties", method: :post, local: true do |f| %>
+
+  <%= f.label 'Duration of Party' %>
+  <%= f.number_field :duration, value: @film[:runtime] %> <br>
+
+  <%= f.label 'Day' %>
+  <%= f.date_field :date, min: Date.today %> <br>
+
+  <%= f.label 'Start Time' %>
+  <%= f.time_field :start_time %> <br>
+
+  <% if current_user.followed.count == 0 %>
+    <%= "You currently have no friends to add to this view party!" %> <br>
+  <% else %>
+    <% current_user.followed.each do |followed| %>
+    <%= f.label followed.username %> <br>
+    <%= f.check_box followed.username %> <br>
+  <% end %>
+<% end %>
+
+  <%= f.submit 'Create party' %> <br>
+<% end %>

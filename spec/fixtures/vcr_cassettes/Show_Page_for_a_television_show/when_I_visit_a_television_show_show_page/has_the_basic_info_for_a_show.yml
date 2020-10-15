@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/tv/76479?api_key=<movie_api_key>&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<movie_api_key>"
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 14 Oct 2020 05:36:18 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=3600
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c4600826f576e4219429b9afebc2fd4c
+      X-Memc-Age:
+      - '3284'
+      X-Memc-Expires:
+      - '316'
+      Etag:
+      - W/"a6efeb122a7a3243c45799d09891edfc"
+      Last-Modified:
+      - Wed, 14 Oct 2020 05:36:18 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 81213991fff5ea7b15c6f9b0af71bbba.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW53-C1
+      X-Amz-Cf-Id:
+      - 41bqt8MInx80Q62_H9ieR8d5sd8SIAdqUPeux_2sAkA5aJe2Yniv7w==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJiYWNrZHJvcF9wYXRoIjoiL21HVnJYZUlqeWVjajZUS213UFZwSGxzY0Vtdy5qcGciLCJjcmVhdGVkX2J5IjpbeyJpZCI6NTgzMjEsImNyZWRpdF9pZCI6IjVmMzgxNGMwMTFjMDY2MDAzNjM3ZjZhOCIsIm5hbWUiOiJFcmljIEtyaXBrZSIsImdlbmRlciI6MiwicHJvZmlsZV9wYXRoIjoiL2RkN0VnZk9FS1BxUXhXdEJmQXZqWVphaGJTYy5qcGcifV0sImVwaXNvZGVfcnVuX3RpbWUiOls2MF0sImZpcnN0X2Fpcl9kYXRlIjoiMjAxOS0wNy0yNSIsImdlbnJlcyI6W3siaWQiOjEwNzY1LCJuYW1lIjoiU2NpLUZpICYgRmFudGFzeSJ9LHsiaWQiOjEwNzU5LCJuYW1lIjoiQWN0aW9uICYgQWR2ZW50dXJlIn1dLCJob21lcGFnZSI6Imh0dHBzOi8vd3d3LmFtYXpvbi5jb20vZHAvQjA4NzVMNDVHSyIsImlkIjo3NjQ3OSwiaW5fcHJvZHVjdGlvbiI6dHJ1ZSwibGFuZ3VhZ2VzIjpbImVuIl0sImxhc3RfYWlyX2RhdGUiOiIyMDIwLTEwLTA5IiwibGFzdF9lcGlzb2RlX3RvX2FpciI6eyJhaXJfZGF0ZSI6IjIwMjAtMTAtMDkiLCJlcGlzb2RlX251bWJlciI6OCwiaWQiOjIzMjQ1NjcsIm5hbWUiOiJXaGF0IEkgS25vdyIsIm92ZXJ2aWV3IjoiKioqU1VQRVIgVklMTEFJTiBBTEVSVCoqKiBZT1UgQVJFIFJFQ0VJVklORyBUSElTIE5PVElGSUNBVElPTiBGUk9NIFRIRSBERVBBUlRNRU5UIE9GIEhPTUVMQU5EIFNFQ1VSSVRZLiBBIFNVUEVSIFZJTExBSU4gQUxFUlQgSEFTIEJFRU4gSVNTVUVEIEZPUiBZT1VSIEFSRUEuIFBMRUFTRSBCRSBWSUdJTEFOVCBBTkQgUkVQT1JUIEFOWSBTVVNQSUNJT1VTIFBFUlNPTlMgT1IgQUNUSVZJVFkuIElGIFlPVSBCRUxJRVZFIFlPVSBIQVZFIFNFRU4gQSBTVVBFUiBWSUxMQUlOLCBETyBOT1QgQVBQUk9BQ0ggT1IgQVRURU1QVCBUTyBBUFBSRUhFTkQgVEhFTS4gQ09OVEFDVCBMQVcgRU5GT1JDRU1FTlQgSU1NRURJQVRFTFkiLCJwcm9kdWN0aW9uX2NvZGUiOiJUSEJZIDIwOCIsInNlYXNvbl9udW1iZXIiOjIsInNob3dfaWQiOjc2NDc5LCJzdGlsbF9wYXRoIjoiL3c0NEdXN1p2ODA4VjFuc3IxTlk2WTNJOHI4Qi5qcGciLCJ2b3RlX2F2ZXJhZ2UiOjguNSwidm90ZV9jb3VudCI6NH0sIm5hbWUiOiJUaGUgQm95cyIsIm5leHRfZXBpc29kZV90b19haXIiOm51bGwsIm5ldHdvcmtzIjpbeyJuYW1lIjoiQW1hem9uIiwiaWQiOjEwMjQsImxvZ29fcGF0aCI6Ii9pZmhiTnV1Vm5sd1l5NW9YQTVWSWIyWVI4QVoucG5nIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9XSwibnVtYmVyX29mX2VwaXNvZGVzIjoxNiwibnVtYmVyX29mX3NlYXNvbnMiOjIsIm9yaWdpbl9jb3VudHJ5IjpbIlVTIl0sIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF9uYW1lIjoiVGhlIEJveXMiLCJvdmVydmlldyI6IkEgZ3JvdXAgb2YgdmlnaWxhbnRlcyBrbm93biBpbmZvcm1hbGx5IGFzIOKAnFRoZSBCb3lz4oCdIHNldCBvdXQgdG8gdGFrZSBkb3duIGNvcnJ1cHQgc3VwZXJoZXJvZXMgd2l0aCBubyBtb3JlIHRoYW4gYmx1ZS1jb2xsYXIgZ3JpdCBhbmQgYSB3aWxsaW5nbmVzcyB0byBmaWdodCBkaXJ0eS4iLCJwb3B1bGFyaXR5IjoxNjcyLjYyOSwicG9zdGVyX3BhdGgiOiIvbVk3U2VINEhGRnhXMWhpSTZjV3V3Q1JLcHROLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6MjA1ODAsImxvZ29fcGF0aCI6Ii90a0ZFODFqSklxaUZZUFA4VGhvNTdNWFJRRXgucG5nIiwibmFtZSI6IkFtYXpvbiBTdHVkaW9zIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9LHsiaWQiOjMzMywibG9nb19wYXRoIjoiLzV4VUpmelBaOGpXSlVEell0SWV1UE80cVBJYS5wbmciLCJuYW1lIjoiT3JpZ2luYWwgRmlsbSIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifSx7ImlkIjoxMTA3MywibG9nb19wYXRoIjoiL3dIczQ0Zmt0ZG9qNmMzNzhaYlNXZnpLc00yWi5wbmciLCJuYW1lIjoiU29ueSBQaWN0dXJlcyBUZWxldmlzaW9uIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9LHsiaWQiOjM4Mzk4LCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJLcmlwa2UgRW50ZXJwcmlzZXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6MTY2MTUsImxvZ29fcGF0aCI6Ii9kYnhIYU90aWJUS3ZQNmRVTVJZZHdVT1VMZ1kucG5nIiwibmFtZSI6IlBvaW50IEdyZXkgUGljdHVyZXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6MjUyNiwibG9nb19wYXRoIjoiL2t6SVc2UVdoYWNEd3pHb1hFSVdoYWM4cmI3MC5wbmciLCJuYW1lIjoiS2lja3N0YXJ0Iiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9LHsiaWQiOjMzNzI4LCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJOaWdodFNreSBQcm9kdWN0aW9ucyIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifV0sInNlYXNvbnMiOlt7ImFpcl9kYXRlIjoiMjAyMC0wOS0wOSIsImVwaXNvZGVfY291bnQiOjEsImlkIjoxNjMyNzcsIm5hbWUiOiJTcGVjaWFscyIsIm92ZXJ2aWV3IjoiIiwicG9zdGVyX3BhdGgiOiIvY0NYRzgxZFNDUFhjcVltNmdUSGx3dFhvY3RpLmpwZyIsInNlYXNvbl9udW1iZXIiOjB9LHsiYWlyX2RhdGUiOiIyMDE5LTA3LTI1IiwiZXBpc29kZV9jb3VudCI6OCwiaWQiOjk4MDg1LCJuYW1lIjoiU2Vhc29uIDEiLCJvdmVydmlldyI6IiIsInBvc3Rlcl9wYXRoIjoiL2czSGpVZUZDd0tPZkJ4bE05N2x2MDE2bW5vbC5qcGciLCJzZWFzb25fbnVtYmVyIjoxfSx7ImFpcl9kYXRlIjoiMjAyMC0wOS0wNCIsImVwaXNvZGVfY291bnQiOjgsImlkIjoxNTQ2ODEsIm5hbWUiOiJTZWFzb24gMiIsIm92ZXJ2aWV3IjoiVGhlIGV2ZW4gbW9yZSBpbnRlbnNlLCBtb3JlIGluc2FuZSBzZWFzb24gdHdvIGZpbmRzIFRoZSBCb3lzIG9uIHRoZSBydW4gZnJvbSB0aGUgbGF3LCBodW50ZWQgYnkgdGhlIFN1cGVzLCBhbmQgZGVzcGVyYXRlbHkgdHJ5aW5nIHRvIHJlZ3JvdXAgYW5kIGZpZ2h0IGJhY2sgYWdhaW5zdCBWb3VnaHQuIEluIGhpZGluZywgSHVnaGllLCBNb3RoZXLigJlzIE1pbGssIEZyZW5jaGllIGFuZCBLaW1pa28gdHJ5IHRvIGFkanVzdCB0byBhIG5ldyBub3JtYWwsIHdpdGggQnV0Y2hlciBub3doZXJlIHRvIGJlIGZvdW5kLiBNZWFud2hpbGUsIFN0YXJsaWdodCBtdXN0IG5hdmlnYXRlIGhlciBwbGFjZSBpbiBUaGUgU2V2ZW4gYXMgSG9tZWxhbmRlciBzZXRzIGhpcyBzaWdodHMgb24gdGFraW5nIGNvbXBsZXRlIGNvbnRyb2wuIEhpcyBwb3dlciBpcyB0aHJlYXRlbmVkIHdpdGggdGhlIGFkZGl0aW9uIG9mIFN0b3JtZnJvbnQsIGEgc29jaWFsIG1lZGlhLXNhdnZ5IG5ldyBTdXBlLCB3aG8gaGFzIGFuIGFnZW5kYSBvZiBoZXIgb3duLiBPbiB0b3Agb2YgdGhhdCwgdGhlIFN1cGVydmlsbGFpbiB0aHJlYXQgdGFrZXMgY2VudGVyIHN0YWdlIGFuZCBtYWtlcyB3YXZlcyBhcyBWb3VnaHQgc2Vla3MgdG8gY2FwaXRhbGl6ZSBvbiB0aGUgbmF0aW9u4oCZcyBwYXJhbm9pYS4iLCJwb3N0ZXJfcGF0aCI6Ii9tWTdTZUg0SEZGeFcxaGlJNmNXdXdDUktwdE4uanBnIiwic2Vhc29uX251bWJlciI6Mn1dLCJzdGF0dXMiOiJSZXR1cm5pbmcgU2VyaWVzIiwidHlwZSI6IlNjcmlwdGVkIiwidm90ZV9hdmVyYWdlIjo4LjQsInZvdGVfY291bnQiOjI5NzJ9
+  recorded_at: Wed, 14 Oct 2020 05:36:18 GMT
+recorded_with: VCR 6.0.0

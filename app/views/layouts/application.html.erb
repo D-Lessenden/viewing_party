@@ -12,8 +12,12 @@
 
     <% if current_user %>
       <nav>
-        <p> <%= current_user.username %>'s Account </p>
-        <%= link_to "Log Out", "/logout", method: :get %>
+        <%= "#{current_user.username}'s Account" %>
+        <%= link_to "Dashboard", "/dashboard", method: :get %>
+        <%= link_to "Discover", "/discover", method: :get %>
+        <%= link_to "Top Movies", "/movies", method: :get %>
+        <%= link_to "Top Shows", "/shows", method: :get %>
+        <%= link_to "Logout", "/logout", method: :get %>
       </nav>
     <% end %>
 

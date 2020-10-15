@@ -17,7 +17,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    render file: '/public/404' if current_user.nil?
+  end
+
+  def add_friend
+    friend = User.where(email: params[:friend])
+    if friend.empty?
+      flash[:error] = 'Could not find a user with that email'
+    else
+      @friendship = Friendship.create(followed_id: friend.first.id, follower_id: current_user.id)
+      flash[:success] = "#{params[:friend]} has been added to your friends!"
+    end
+    redirect_to '/dashboard'
   end
 
   private

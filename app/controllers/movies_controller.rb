@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
   def index
+    render file: '/public/404' if current_user.nil?
+
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.headers['API-Key'] = ENV['MOVIE_API_KEY']
     end
@@ -14,10 +16,13 @@ class MoviesController < ApplicationController
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.headers['API-Key'] = ENV['MOVIE_API_KEY']
     end
-    response = conn.get("/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&query=#{@search}")
+    response = conn.get("/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&language=en-US&query=#{@search}&page=1")
+    response2 = conn.get("/3/search/movie?api_key=#{ENV['MOVIE_API_KEY']}&language=en-US&query=#{@search}&page=2")
 
     json = JSON.parse(response.body, symbolize_names: true)
+    json2 = JSON.parse(response2.body, symbolize_names: true)
     @films = json[:results]
+    @films2 = json2[:results]
   end
 
   def show
