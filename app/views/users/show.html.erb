@@ -21,7 +21,7 @@
 
 <h3><%= link_to "Viewing Parties", "/parties" %></h3>
 
-<% @user.parties.each do |party| %>
+<% current_user.parties.each do |party| %>
   <%= "Movie Title: #{party.movie_title}" %> <br>
   <%= "Duration: #{party.duration} minutes" %> <br>
   <%= "Date: #{party.date}" %> <br>

@@ -17,19 +17,18 @@ class PartiesController < ApplicationController
     response = conn.get("/3/movie/#{params[:id]}?api_key=#{ENV['MOVIE_API_KEY']}")
     @film = JSON.parse(response.body, symbolize_names: true)
     party = Party.create({
-      movie_title: @film[:original_title],
-      duration: params[:duration],
-      date: params[:date],
-      start_time: params[:start_time],
-      user_id: current_user.id
-      })
+                         movie_title: @film[:original_title],
+                         duration: params[:duration],
+                         date: params[:date],
+                         start_time: params[:start_time],
+                         user_id: current_user.id
+            })
     if party.save
-      flash[:success] = "Nice! New Party Created!"
-      redirect_to "/dashboard"
+      flash[:success] = 'Nice! New Party Created!'
+      redirect_to '/dashboard'
     else
       flash[:errors] = party.errors.full_messages.to_sentence
       render :new
     end
   end
-
 end
