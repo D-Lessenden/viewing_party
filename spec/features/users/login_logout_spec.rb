@@ -42,11 +42,11 @@ RSpec.describe "As a registered user, I can log in and log out" do
     fill_in "Password", with: @user.password
     click_button "Log In"
 
-    click_link "Log Out"
+    click_link "Logout"
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content("You have logged out. See you next time!")
-    expect(page).to_not have_link("Log Out")
+    expect(page).to_not have_link("Logout")
   end
 
 end
